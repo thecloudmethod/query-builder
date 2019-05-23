@@ -1,0 +1,41 @@
+{
+  "name": "query-builder",
+  "version": "0.0.1",
+  "description": "At Typescript Class for generating sequelize escaped SQL queries",
+  "author": "Ben Morgan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thecloudmethod/query-builder.git"
+  },
+  "main": "./dist/index.js",
+  "scripts": {
+    "build:hot": "webpack --config webpack.hot.config.js --progress --colors",
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "precommit": "lint-staged",
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish --access public"
+  },
+  "devDependencies": {
+    "@types/node": "~11.11.3",
+    "husky": "0.14.3",
+    "lint-staged": "8.1.7",
+    "prettier": "^1.15.3",
+    "reflect-metadata": "0.1.12",
+    "ts-loader": "5.3.3",
+    "ts-node": "~8.0.3",
+    "tsconfig-paths": "^3.8.0",
+    "tslint": "~5.14.0",
+    "typescript": "3.1.1",
+    "webpack": "^4.4.0",
+    "webpack-cli": "3.3.0",
+    "webpack-node-externals": "^1.7.2",
+    "webpack-shell-plugin": "^0.5.0"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
